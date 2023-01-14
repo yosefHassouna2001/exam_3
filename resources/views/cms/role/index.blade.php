@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('countries.create') }}" type="submit" class="btn btn-info">Add New Role</a>
+                        <a href="{{ route('roles.create') }}" type="submit" class="btn btn-info">Add New Role</a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -27,7 +27,7 @@
                                 <th style="width: 10px">#</th>
                                 <th>job_name</th>
                                 <th>name_user</th>
-                                <th>permission_id</th>
+                                <th>permission name</th>
                                 <th>Setting</th>
                             </tr>
                             </thead>
@@ -35,7 +35,7 @@
                                 @foreach($roles as $role)
                                     <tr>
                                         <td>{{ $role->id }}</td>
-                                        <td>{{ $role->job_name ?? "" }}</td>
+                                        <td>{{ $role->job_name ?? "s" }}</td>
                                         <td>{{ $role->name_user ?? "" }}</td>
                                         <td><span class="badge bg-info"> {{ $role->permissions->name_permission ?? "" }}</span></td>
 

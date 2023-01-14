@@ -36,7 +36,7 @@
                                 <label for="name_user">name user</label>
                                 <select name="name_user" class="form-control" id="name_user"
                                 aria-label=".form-select-sm example">
-                                    <option value="">Chose</option>
+                                    <option value="{{ $roles->id }}">{{ $roles->name_user }}</option>
                                     <option value="admin">admin</option>
                                     <option value="account">account</option>
                                 </select>
@@ -44,17 +44,15 @@
                             <div class="form-group col-md-6">
                                 <label>permission Name</label>
                                 <select class="form-control select2" id="permission_id" name="permission_id" style="width: 100%;">
-                                    @foreach($permissions as $permission)
-                                        <option value="{{ $permission->id }}">{{ $permission->name_permission }}</option>
-                                        <option 
-                                                @if($permission->id == $roles->permission_id)
-                                                    selected
-                                                @endif 
-                                                value="{{ $permission->id }}">{{ $permission->permission_name }}
-                                            </option>
-                                    @endforeach
-
-                                </select>
+                                    @foreach ($permissions as $permission )
+                                        <option @if ($permission->id == $roles->country_id)
+                                            selected @endif
+                                            value="{{ $permission->id }}">
+                                                {{ $permission->name_permission }}
+                                        </option>
+                                   @endforeach
+                                
+                                  </select>
                             </div>
                         </div>
                         
@@ -62,7 +60,7 @@
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button onclick="preformUpdate({{ $roles->id }})" type="button" class="btn btn-primary">Store</button>
+                        <button onclick="preformUpdate({{ $roles->id }})" type="button" class="btn btn-primary">Update</button>
                         <a href="{{ route('roles.index') }}" type="submit" class="btn btn-info">Go back</a>
                     </div>
                     </form>

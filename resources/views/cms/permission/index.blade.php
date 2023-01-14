@@ -26,7 +26,7 @@
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th>Permisson Name</th>
-                                <th>Number of City</th>
+                                <th>Status</th>
                                 <th>Setting</th>
                             </tr>
                             </thead>
